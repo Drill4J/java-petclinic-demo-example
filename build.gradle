@@ -24,7 +24,7 @@ allprojects {
 
     drill {
         def testFramework = System.getProperty("testFramework") ?: ""
-        version = System.getProperty("autotestAgentVersion") ?: "0.15.8"
+        version = System.getProperty("autotestAgentVersion") ?: "0.16.2"
         agentId = System.getProperty("agentId") ?: null
         groupId = System.getProperty("groupId") ?: null
         adminHost = System.getProperty("adminHost") ?: "localhost"
