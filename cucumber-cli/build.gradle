@@ -16,15 +16,15 @@ configurations {
 
 test {
     dependsOn assemble, testClasses
-    systemProperties System.properties
     doLast {
         def tmpJvmArgs = new ArrayList(jvmArgs)
         javaexec {
             jvmArgs = tmpJvmArgs
+            systemProperties System.getProperties()
             def tags = System.getProperty("cucumber.filter.tags") ?: null
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--strict', '--glue', 'com.epam.drill', 'src/test/resources', '--tags', tags]
+            args += ['--strict', '--glue', 'com.epam.drill', 'cucumber-cli/src/test/resources/com.epam.drill', '--tags', tags]
         }
     }
 }
