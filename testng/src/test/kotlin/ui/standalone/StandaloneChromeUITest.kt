@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider
 import org.testng.annotations.Test
 
 
-class StandaloneChromeUITest() {
+class StandaloneChromeUITest {
 
     lateinit var petclinicUrl: String
 
@@ -19,7 +19,7 @@ class StandaloneChromeUITest() {
     fun testNgBeforeAll() {
         petclinicUrl = System.getProperty("petclinicUrl", "http://localhost:8087")
         Configuration.browser = "chrome"
-        Configuration.remote = "http://ecse005002a0.epam.com:4444/wd/hub"
+        Configuration.remote = "http://ecse005002a0.epam.com:4444/wd/hub" //todo move to env
         Configuration.browserCapabilities.setCapability("enableVNC", true)
     }
 
