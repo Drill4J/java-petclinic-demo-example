@@ -23,8 +23,9 @@ allprojects {
     }
 
     drill {
+        jvmArgs = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5009"]
         def testFramework = System.getProperty("testFramework") ?: ""
-        version = System.getProperty("autotestAgentVersion") ?: "0.16.2"
+        version = System.getProperty("autotestAgentVersion") ?: "0.16.5"
         agentId = System.getProperty("agentId") ?: null
         groupId = System.getProperty("groupId") ?: null
         adminHost = System.getProperty("adminHost") ?: "localhost"
