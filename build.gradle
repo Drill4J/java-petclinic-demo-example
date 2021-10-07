@@ -15,29 +15,29 @@ allprojects {
 
     dependencies {
         apply plugin: 'java'
-        apply plugin: 'com.epam.drill.agent.runner.autotest'
+//        apply plugin: 'com.epam.drill.agent.runner.autotest'
         apply plugin: 'org.jetbrains.kotlin.jvm'
         testImplementation 'com.codeborne:selenide:5.17.4'
         testImplementation 'io.rest-assured:rest-assured:4.3.3'
         testImplementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.8.1'
     }
 
-    drill {
-        jvmArgs = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5009"]
-        def testFramework = System.getProperty("testFramework") ?: ""
-        version = System.getProperty("autotestAgentVersion") ?: "0.16.9"
-        agentId = System.getProperty("agentId") ?: null
-        groupId = System.getProperty("groupId") ?: null
-        adminHost = System.getProperty("adminHost") ?: "localhost"
-        adminPort = System.getProperty("adminPort") ?: 8090
-        logLevel = com.epam.drill.agent.runner.LogLevels.TRACE
-        additionalParams =
-                ["browserProxyAddress": "$adminHost:7777",
-                 "rawFrameworkPlugins": "$testFramework"
-                ]
-        logFile = file("build/drill-autotest.log")
-
-    }
+//    drill {
+//        jvmArgs = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5009"]
+//        def testFramework = System.getProperty("testFramework") ?: ""
+//        version = System.getProperty("autotestAgentVersion") ?: "0.16.9"
+//        agentId = System.getProperty("agentId") ?: null
+//        groupId = System.getProperty("groupId") ?: null
+//        adminHost = System.getProperty("adminHost") ?: "localhost"
+//        adminPort = System.getProperty("adminPort") ?: 8090
+//        logLevel = com.epam.drill.agent.runner.LogLevels.TRACE
+//        additionalParams =
+//                ["browserProxyAddress": "$adminHost:7777",
+//                 "rawFrameworkPlugins": "$testFramework"
+//                ]
+//        logFile = file("build/drill-autotest.log")
+//
+//    }
 
 }
 
