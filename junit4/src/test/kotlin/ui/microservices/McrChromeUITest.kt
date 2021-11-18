@@ -30,7 +30,8 @@ class McrChromeUITest(private var featureUrl: String, private var expectedHeader
                 arrayOf("$petclinicUrl/#!/welcome", "Welcome to Petclinic"),
                 arrayOf("$petclinicUrl/#!/owners", "Owners"),
                 arrayOf("$petclinicUrl/#!/owners/10/pets/13/visits", "Visits"),
-                arrayOf("$petclinicUrl/#!/vets", "Veterinarians")
+                arrayOf("$petclinicUrl/#!/vets", "Veterinarians"),
+                arrayOf("$petclinicUrl/#!/owners/details/2", "Owner Information")
             )
         }
     }

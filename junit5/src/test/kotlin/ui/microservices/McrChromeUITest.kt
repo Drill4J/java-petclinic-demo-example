@@ -30,7 +30,8 @@ class McrChromeUITest {
         "/#!/welcome, Welcome to Petclinic",
         "/#!/owners, Owners",
         "/#!/owners/10/pets/13/visits, Visits",
-        "/#!/vets, Veterinarians"
+        "/#!/vets, Veterinarians",
+        "/#!/owners/details/2, Owner Information"
     )
     fun junit5CheckPageHeader(featureUrl: String, expectedHeader: String) {
         open("$petclinicUrl$featureUrl")

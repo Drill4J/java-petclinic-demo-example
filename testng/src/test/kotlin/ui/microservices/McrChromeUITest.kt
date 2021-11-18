@@ -22,7 +22,7 @@ class McrChromeUITest {
 
     @DataProvider
     fun getData(): Array<Array<Any?>> {
-        val data = Array(4) {
+        val data = Array(5) {
             arrayOfNulls<Any>(
                 2
             )
@@ -35,6 +35,8 @@ class McrChromeUITest {
         data[2][1] = "Visits"
         data[3][0] = "/#!/vets"
         data[3][1] = "Veterinarians"
+        data[4][0] = "/#!/owners/details/2"
+        data[4][1] = "Owner Information"
         return data
     }
 
