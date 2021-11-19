@@ -2,6 +2,7 @@ package api.microservices
 
 import io.restassured.RestAssured.given
 import org.testng.annotations.BeforeClass
+import org.testng.annotations.Ignore
 import org.testng.annotations.Test
 
 
@@ -14,6 +15,7 @@ class McrApiTest {
         petclinicUrl = System.getProperty("petclinicUrl", "http://localhost:8087")
     }
 
+    @Ignore
     @Test
     fun testNgCreateNewVisitTest() {
         given()
@@ -40,6 +42,14 @@ class McrApiTest {
     fun testNgGetVetsInfoTest() {
         given()
             .get("$petclinicUrl/api/vet/vets")
+            .then()
+            .statusCode(200)
+    }
+
+    @Test
+    fun testOwnerDetailes() {
+        given()
+            .get("$petclinicUrl/api/gateway/owners/2")
             .then()
             .statusCode(200)
     }
