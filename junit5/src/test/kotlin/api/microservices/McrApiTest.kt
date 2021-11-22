@@ -44,4 +44,12 @@ class McrApiTest {
             .then()
             .statusCode(200)
     }
+
+    @Test
+    fun testOwnerDetailes() {
+        given()
+            .get("$petclinicUrl/api/gateway/owners/2")
+            .then()
+            .statusCode(200)
+    }
 }
