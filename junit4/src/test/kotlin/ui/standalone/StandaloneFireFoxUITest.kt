@@ -20,7 +20,6 @@ class StandaloneFireFoxUITest {
         fun junit4BeforeAll() {
             petclinicUrl = System.getProperty("petclinicUrl", "http://localhost:8087")
             Configuration.browser = "firefox"
-            Configuration.remote = "http://ecse005002a0.epam.com:4444/wd/hub"
             Configuration.browserCapabilities.setCapability("enableVNC", true)
         }
 

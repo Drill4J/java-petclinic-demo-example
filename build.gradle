@@ -23,20 +23,17 @@ allprojects {
     }
 
     drill {
-        jvmArgs = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5009"]
         def testFramework = System.getProperty("testFramework") ?: ""
-        version = System.getProperty("autotestAgentVersion") ?: "0.16.9"
-        agentId = System.getProperty("agentId") ?: null
-        groupId = System.getProperty("groupId") ?: null
+        version = System.getProperty("autotestAgentVersion") ?: "0.17.7"
+        agentId = System.getProperty("agentId") ?: "ExampleAgent"
         adminHost = System.getProperty("adminHost") ?: "localhost"
         adminPort = System.getProperty("adminPort") ?: 8090
-        logLevel = com.epam.drill.agent.runner.LogLevels.TRACE
+        logLevel = com.epam.drill.agent.runner.LogLevels.INFO
         additionalParams =
-                ["browserProxyAddress": "$adminHost:7777",
-                 "rawFrameworkPlugins": "$testFramework"
-                ]
+                 [
+                         "rawFrameworkPlugins": "$testFramework"
+                 ]
         logFile = file("build/drill-autotest.log")
-
     }
 
 }

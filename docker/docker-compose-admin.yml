@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  drill-admin:
+    image: drill4j/admin:0.8.0-38
+    environment:
+      - TEST2CODE_PLUGIN_VERSION=0.8.0-36
+      - LOG_LEVEL=INFO
+      - DRILL_DEFAULT_PACKAGES=org/springframework/samples/petclinic
+    ports:
+      - 8090:8090
+    volumes:
+      - drill-data:/work
+
+  admin-ui:
+    image: drill4j/admin-ui-root-config:0.1.0-81
+    restart: always
+    ports:
+      - 8091:8080
+    environment:
+      WAIT_HOSTS: drill-admin:8090
+      UI_PLUGINS_URLS: test2code#https://cdn.jsdelivr.net/npm/@drill4j/test2code-ui@0.1.0-74/dist/Drill4J-test-to-code.js
+
+
+volumes:
+  drill-data:
