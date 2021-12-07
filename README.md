@@ -1,4 +1,4 @@
-# Drill4J: Java + JavaScript setup
+# Drill4J: Java setup
 
 This repository demonstrates how Drill4J enables various metrics collection (including coverage) for backend application across multiple builds
 
@@ -6,7 +6,7 @@ The demo is based on [Petclinic example apps](https://github.com/Drill4J/spring-
 
 ## Notes
 
-1. This is not an installation guide. For the installation instructions, please refer to the documentation on [Drill4J Website](https://drill4j.github.io/docs/installation/drill-admin)
+1. This is not installation guidelines. For the installation instructions, please refer to the documentation on [Drill4J Website](https://drill4j.github.io/docs/installation/drill-admin)
 
 ## Setup overview
 
@@ -29,7 +29,7 @@ The demo is based on [Petclinic example apps](https://github.com/Drill4J/spring-
 
 2. Open [Example Application](http://localhost:8087) and wait until it becomes available
 
-3. Open [Drill4J Admin Panel](http://localhost:8091). Expand the group entry, then register agent.
+3. Open [Drill4J Admin Panel](http://localhost:8091). Register agent.
 
    > There is no need to specify any parameters during the registration, just click through steps leaving everything as-is.
 
@@ -85,6 +85,8 @@ The demo is based on [Petclinic example apps](https://github.com/Drill4J/spring-
 
 
 
+----
+----
 
 # Petclinic simple autotests
 
